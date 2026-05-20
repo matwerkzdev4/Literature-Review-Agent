@@ -1,12 +1,42 @@
 # Literature Review Agent
 
-This project is a YAML-driven, resumable multi-agent workflow for turning a plain-English materials or process question into an experiment planning brief.
+## What This Application Does
 
-The workflow compares competing routes defined by process sequence, uses only approved public sources, ranks routes mainly by strength of evidence, pauses once for shortlist approval, and returns route labels of `recommended`, `conditional`, or `not recommended`.
+The Literature Review Agent helps a team turn a broad materials or process question into a clear experiment-planning brief. Instead of leaving research notes scattered across papers, spreadsheets, and conversations, it guides the work through a fixed review process: define the question, find candidate papers, shortlist useful evidence, compare possible process routes, check whether the lab has suitable equipment, and produce a concise recommendation.
 
-## Final Brief Sections
+In plain English, it is a decision-support tool for answering questions like:
 
-The final brief must always contain these sections in this order:
+- Which processing route looks most defensible based on public evidence?
+- Which route should we test first in the lab?
+- What evidence, risks, and unknowns should the team be aware of before spending time or money on experiments?
+
+## Why It Matters
+
+Early technical decisions are often made with incomplete information. A team may know that several routes are possible, but not which one has the strongest evidence, which one fits available equipment, or which one carries the biggest hidden risk.
+
+This application creates value by making that decision process more structured, traceable, and repeatable. It helps reduce wasted experimental effort, captures assumptions clearly, and gives both technical and non-technical stakeholders a shared summary of why a route is recommended, conditional, or not recommended.
+
+## Intended Impact
+
+The goal is not to replace expert judgment. The goal is to make expert judgment easier to apply.
+
+The application is designed to help teams:
+
+- move from a broad research question to a practical next experiment,
+- compare competing process routes using consistent criteria,
+- preserve the reasoning behind each recommendation,
+- identify weak evidence before it becomes an expensive lab trial,
+- communicate findings in a brief that managers, engineers, and researchers can all read.
+
+## Current Status
+
+This repository is a working Python scaffold for the workflow. It can manage project folders, save YAML state, pause for shortlist approval, resume work, and generate plain-English output files.
+
+It is not yet a fully automated production research system. The current version includes basic search and extraction logic, but deeper integrations with literature databases, PDF extraction, citation validation, and expert review workflows are still future work.
+
+## What The Final Brief Contains
+
+Each completed review produces a final brief with these sections:
 
 1. Purpose
 2. Assumptions
@@ -16,25 +46,51 @@ The final brief must always contain these sections in this order:
 6. Recommended Next Experiment
 7. Risks and Unknowns
 
-## Workflow Order
+The final brief is intended to be short enough for decision-making, but structured enough that the recommendation can be challenged and improved.
 
-1. `intake_agent`
-2. `translation_agent`
-3. `search_agent`
-4. `triage_agent`
-5. `ranking_agent`
-6. User approval gate
-7. `full_text_extraction_agent`
-8. `route_comparison_agent`
-9. `lab_analogue_agent`
-10. `recommendation_agent`
-11. `compliance_agent`
+## How The Workflow Works
 
-The `orchestrator_agent` runs these steps sequentially and stores progress in YAML.
+The workflow follows a fixed sequence:
 
-## CLI Scaffold
+1. Intake the user's question.
+2. Translate the question into a technical review scope.
+3. Search approved public sources for candidate papers.
+4. Triage papers that are not useful enough.
+5. Rank the remaining papers and routes.
+6. Pause for the user to approve the shortlist.
+7. Extract useful details from approved papers.
+8. Compare routes by evidence strength and process sequence.
+9. Check whether a meaningful lab analogue can be run with available equipment.
+10. Generate recommendations.
+11. Check that the final brief has the required sections.
 
-The project now includes a minimal Python scaffold for running the workflow state machine.
+The workflow stores progress in YAML files so a review can be paused, inspected, and resumed.
+
+## Example Outputs
+
+Each workflow run is saved under:
+
+```text
+projects/<project_name>/
+```
+
+Readable output files are written to:
+
+```text
+projects/<project_name>/outputs/
+```
+
+Typical output files include:
+
+- `search_results.txt`
+- `shortlist_review.txt`
+- `route_comparison.txt`
+- `recommendations.txt`
+- `final_brief.md`
+
+## Using The CLI
+
+The project includes a minimal command-line interface for running the workflow state machine.
 
 Example commands:
 
@@ -50,41 +106,40 @@ python3 -m literature_review_agent --project-root . show-recommendations
 python3 -m literature_review_agent --project-root . show-final-brief
 ```
 
-This scaffold manages YAML state, shortlist approval, pause and resume behavior, and final brief generation. It does not yet include real literature search integrations.
+For non-technical users, start with:
 
-Each workflow run is saved in its own folder under `projects/<project_name>/`.
-
-The workflow writes readable helper files into `projects/<project_name>/outputs/`:
-
-- `search_results.txt`
-- `route_comparison.txt`
-- `shortlist_review.txt`
-- `recommendations.txt`
-- `final_brief.md`
-
-For non-technical users, a plain-English intake template is available at [user_input_template.txt](/home/user/code/Literature%20review%20agent/templates/user_input_template.txt).
-
-If you want a simpler starting point, use [SIMPLE_GUIDE.md](/home/user/code/Literature%20review%20agent/SIMPLE_GUIDE.md).
+- `SIMPLE_GUIDE.md`
+- `templates/user_input_template.txt`
 
 ## Project Layout
 
 ```text
 Literature review agent/
-  agents/
-  configs/
-  projects/
-  specs/
-  templates/
-  tone.yml
-  workflow_change_log.yml
+  agents/       Notes about agent roles
+  configs/      Approved sources, equipment, and decision rules
+  projects/     Saved example and runtime workflow projects
+  specs/        Workflow design and rationale
+  src/          Python implementation
+  templates/    User input and final brief templates
+  tests/        Workflow tests
 ```
 
 ## Core Design Rules
 
-- Route comparison is organized by process sequence.
-- Search is limited to approved public sources.
+- Routes are compared by process sequence.
 - Evidence strength is the top recommendation factor.
-- Humans approve only the shortlist.
-- Subagents make local judgments.
-- The orchestrator makes workflow decisions.
-- The workflow must stop early if no defensible recommendation can be made.
+- Search is limited to approved public sources.
+- The user approves the shortlist before deeper extraction.
+- Recommendations must be traceable to the evidence available.
+- The workflow should stop early if no defensible recommendation can be made.
+
+## Next Development Priorities
+
+The most important improvements are:
+
+- improve real literature search integrations,
+- improve paper-to-route matching,
+- extract better detail from PDFs and full-text papers,
+- make evidence scoring more rigorous,
+- improve the final brief for real project review meetings,
+- validate recommendations with domain experts.
