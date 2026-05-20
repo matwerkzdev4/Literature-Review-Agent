@@ -1,0 +1,37 @@
+paper_id: PAPER-001
+title: Pilot-scale tape casting route for ceramic slurry processing
+doi: 10.0000/demo.001
+route_ids:
+- ROUTE-001
+url: https://example.org/paper-001
+material_details: 'Detected material clues: ceramic, slurry.'
+process_steps:
+- cast
+key_parameters: []
+reported_scale: pilot
+pilot_evidence: pilot_or_scale_signal_present
+industrial_compatibility_evidence: industrial_compatibility_signal_present
+performance_outcomes: []
+limitations: []
+failure_points: []
+missing_details:
+- Key operating parameters were not clearly identified.
+- Very little extractable text was available.
+evidence_flags:
+  has_clear_process_steps: true
+  has_multiple_process_steps: false
+  has_key_parameters: false
+  has_scale_signal: true
+  has_pilot_signal: true
+  has_industrial_signal: true
+  has_failure_or_limitations: false
+  has_performance_outcomes: false
+summary_snippets:
+- Pilot-scale tape casting route for ceramic slurry processing This study describes
+  an experimental tape-casting process with pilot-scale discussion and production-relevant
+  slurry handling.
+page_fetch_status: failed
+page_title: ''
+page_summary: ''
+notes: 'Could not fetch document: <urlopen error [Errno -3] Temporary failure in name
+  resolution>'

@@ -1,0 +1,28 @@
+routes:
+- route_id: ROUTE-001
+  route_name: Primary route candidate
+  process_sequence:
+  - to_be_defined
+  supporting_paper_ids:
+  - PAPER-001
+  - PAPER-002
+  evidence_summary: Supported by 2 approved paper(s), with an average evidence score
+    of 6.5/10.
+  evidence_strength: strong
+  evidence_score: 13
+  evidence_score_breakdown:
+    paper_count: 2
+    average_paper_score: 6.5
+  pilot_relevance: supported
+  industrial_compatibility: supported
+  main_advantages:
+  - Pilot or scale signal was detected.
+  - Industrial compatibility signal was detected.
+  main_limitations:
+  - Text mentions limited.
+  major_uncertainties:
+  - Key operating parameters were not clearly identified.
+  - Very little extractable text was available.
+  comparison_notes: 'PAPER-001: evidence score 6/10.
+
+    PAPER-002: evidence score 7/10.'

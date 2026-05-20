@@ -1,0 +1,169 @@
+meta:
+  project: Literature review agent
+  source_workflow: original single-prompt workflow
+  target_workflow: agentic experiment-planning workflow
+  last_updated: 2026-04-01
+  owner: ""
+
+changes:
+  - id: CHG-001
+    status: approved
+    original_step: "Overall objective"
+    new_component: "Primary output definition"
+    change_type: "reframe"
+    original_definition: "General literature review focused on industry-validated processes"
+    new_definition: "Experiment planning brief comparing multiple competing routes"
+    rationale: "The workflow should optimize for experiment planning and decision support, not literature completeness."
+    impact:
+      output: "Final deliverable shifts from a generic review to an experiment planning brief."
+      workflow: "Later steps focus on route comparison, analogue feasibility, and recommendation."
+      agents:
+        - orchestrator_agent
+        - recommendation_agent
+    evidence_basis: "User clarified the primary output."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-002
+    status: approved
+    original_step: "Industry-validated"
+    new_component: "Industrial relevance criteria"
+    change_type: "tighten_definition"
+    original_definition: "Industry-validated"
+    new_definition: "Pilot-demonstrated and compatible with standard industrial equipment"
+    rationale: "The original term was too broad and risked inconsistent judgments."
+    impact:
+      output: "Industrial relevance is assessed using explicit criteria rather than a vague label."
+      workflow: "Evidence extraction and comparison must separate pilot demonstration from industrial compatibility."
+      agents:
+        - fulltext_extraction_agent
+        - route_comparison_agent
+    evidence_basis: "User defined the intended meaning."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-003
+    status: approved
+    original_step: "Lab replicability assessment"
+    new_component: "Directional lab analogue feasibility"
+    change_type: "rename_and_reframe"
+    original_definition: "Assess whether the literature method can be replicated with available equipment."
+    new_definition: "Assess whether a technically meaningful directional analogue can be run with available equipment."
+    rationale: "Exact replication is not the goal; the goal is a defensible analogue experiment."
+    impact:
+      output: "Feasibility language becomes more honest and operationally useful."
+      workflow: "Equipment mapping allows bounded adaptation rather than exact method reproduction."
+      agents:
+        - lab_analogue_agent
+        - recommendation_agent
+    evidence_basis: "User specified directional analogue as the target."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-004
+    status: approved
+    original_step: "Single-route review"
+    new_component: "Competing route comparison"
+    change_type: "expand_scope"
+    original_definition: "Review evidence around a target material processing route."
+    new_definition: "Compare multiple competing routes before recommending an experimental path."
+    rationale: "The workflow needs to support route selection, not just route description."
+    impact:
+      output: "Final brief should include ranked route options and recommendation logic."
+      workflow: "Search, extraction, and synthesis operate at route level as well as paper level."
+      agents:
+        - search_agent
+        - route_comparison_agent
+        - recommendation_agent
+    evidence_basis: "User wants to compare competing routes."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-005
+    status: approved
+    original_step: "Source policy"
+    new_component: "Publicly accessible quality-filtered evidence base"
+    change_type: "clarify_constraint"
+    original_definition: "Use only approved open-access repositories."
+    new_definition: "Prefer publicly accessible sources for quality and accessibility, while optimizing for the best evidence available within that constraint."
+    rationale: "The restriction is a quality and accessibility preference, not just a hard access limitation."
+    impact:
+      output: "Evidence gaps should be stated clearly when public sources are insufficient."
+      workflow: "Search and ranking should optimize quality within the approved public corpus."
+      agents:
+        - search_agent
+        - ranking_agent
+    evidence_basis: "User clarified the reason for public-access sources."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-006
+    status: approved
+    original_step: "Approval gate"
+    new_component: "Shortlist approval only"
+    change_type: "narrow_gate"
+    original_definition: "Pause for user approval before continuing."
+    new_definition: "Pause only after shortlist ranking so the user can approve, remove, or reprioritize papers/routes."
+    rationale: "Human review is needed at the triage stage, but not for every downstream inference."
+    impact:
+      output: "The final brief remains evidence-led while preserving user control over full-text review scope."
+      workflow: "The orchestrator blocks only between shortlist ranking and full-text extraction."
+      agents:
+        - orchestrator_agent
+        - ranking_agent
+    evidence_basis: "User stated that approval is needed only for the shortlist."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-007
+    status: approved
+    original_step: "Final recommendation style"
+    new_component: "Evidence-based route recommendation"
+    change_type: "tighten_output"
+    original_definition: "Summarize literature evidence and validation guidance."
+    new_definition: "Recommend the most defensible next experimental path based on literature evidence."
+    rationale: "The mixed technical team needs an actionable recommendation, not just a summary."
+    impact:
+      output: "The final brief must contain a recommendation backed by route-level evidence."
+      workflow: "Synthesis emphasizes comparative evidence strength and next-step experiments."
+      agents:
+        - recommendation_agent
+        - compliance_agent
+    evidence_basis: "User wants recommendations based on evidence."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+  - id: CHG-008
+    status: approved
+    original_step: "Route definition ambiguity"
+    new_component: "Process-sequence route definition"
+    change_type: "resolve_open_question"
+    original_definition: "Route basis was not fixed."
+    new_definition: "Routes are defined by process sequence for v1."
+    rationale: "Experiment planning depends more on process steps than on chemistry labels alone."
+    impact:
+      output: "Route ranking and comparison will use process-sequence groupings."
+      workflow: "Translation, ranking, route comparison, and recommendation will use the same route basis."
+      agents:
+        - translation_agent
+        - ranking_agent
+        - route_comparison_agent
+        - recommendation_agent
+    evidence_basis: "User selected process sequence during planning."
+    decision_owner: "user"
+    date: 2026-04-01
+    notes: ""
+
+open_questions:
+  - id: OQ-001
+    topic: "Route definition"
+    question: "Should route comparison be organized primarily by chemistry, process sequence, or manufacturing method?"
+    status: resolved
+    resolution: "Use process sequence as the route definition for v1."

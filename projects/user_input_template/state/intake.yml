@@ -1,0 +1,13 @@
+project_name: user_input_template
+question: What are the best performing thermal insulation composite sheets and how
+  are they made?
+intended_use: In energy storage systems or battery packs for EVs for thermal management.
+desired_outcome: The experiment route supported with strong evidences that the provides
+  the best insulation performance composite sheet.
+review_purpose: We want to choose the best next experiment and avoid wasting time
+  on weak routes.
+constraints:
+- Only use publicly accessible sources. The thickness of the composite sheet is key.
+- 'Additional note: Plain English is fine. The team is mixed, so the final output
+  should be easy to read.'
+assumptions: []

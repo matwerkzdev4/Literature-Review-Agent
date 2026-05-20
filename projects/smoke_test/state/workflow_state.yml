@@ -1,0 +1,44 @@
+workflow_id: ''
+current_stage: intake_agent
+workflow_status: not_started
+input_files:
+  intake: state/intake.yml
+  technical_scope: state/technical_scope.yml
+  papers: state/papers.yml
+  shortlist: state/shortlist.yml
+detail_files:
+  paper_details_dir: state/paper_details/
+output_files:
+  route_comparison: state/route_comparison.yml
+  lab_analogue: state/lab_analogue.yml
+  recommendations: state/recommendations.yml
+stage_status:
+  intake_agent: pending
+  translation_agent: pending
+  search_agent: pending
+  triage_agent: pending
+  ranking_agent: pending
+  full_text_extraction_agent: pending
+  route_comparison_agent: pending
+  lab_analogue_agent: pending
+  recommendation_agent: pending
+  compliance_agent: pending
+approval_gate:
+  required: true
+  status: waiting
+  triggered_after: ranking_agent
+early_stop:
+  triggered: false
+  reason: ''
+  stage: ''
+  surviving_route_ids: []
+final_decision:
+  overall_label: ''
+  summary: ''
+notes: Final brief rendered and compliance checks completed.
+compliance:
+  passed: false
+  issues: []
+  required_sections: []
+project_name: smoke_test
+project_root: projects/smoke_test

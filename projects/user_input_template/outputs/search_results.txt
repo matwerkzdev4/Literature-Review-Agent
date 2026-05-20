@@ -1,0 +1,21 @@
+Search results
+Query used: what best performing thermal insulation
+Query variants tried: 3
+Papers found: 2
+- PAPER-001: Pilot-scale tape casting route for ceramic slurry processing [DOAJ] (candidate)
+- PAPER-002: Lab study of spray-applied coating route with limited scale discussion [CORE] (candidate)
+Search notes:
+- Could not fetch https://doaj.org/api/search/articles/what+best+performing+thermal+insulation?pageSize=5: <urlopen error [Errno -3] Temporary failure in name resolution>
+- Could not fetch https://core.ac.uk:443/api-v2/search/what+best+performing+thermal+insulation?page=1&pageSize=5: <urlopen error [Errno -3] Temporary failure in name resolution>
+- NOMAD is approved but does not have an automated search adapter yet.
+- NOMAD is approved but does not have an automated search adapter yet.
+- NOMAD is approved but does not have an automated search adapter yet.
+- ACS_MATERIALS_AU is approved but does not have an automated search adapter yet.
+- ACS_MATERIALS_AU is approved but does not have an automated search adapter yet.
+- ACS_MATERIALS_AU is approved but does not have an automated search adapter yet.
+- ACS_OPEN_SCIENCE is approved but does not have an automated search adapter yet.
+- ACS_OPEN_SCIENCE is approved but does not have an automated search adapter yet.
+- ACS_OPEN_SCIENCE is approved but does not have an automated search adapter yet.
+- SCIENCEDIRECT_OA is approved but does not have an automated search adapter yet.
+- SCIENCEDIRECT_OA is approved but does not have an automated search adapter yet.
+- SCIENCEDIRECT_OA is approved but does not have an automated search adapter yet.

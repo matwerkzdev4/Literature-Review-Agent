@@ -1,0 +1,15 @@
+routes:
+- route_id: ROUTE-001
+  route_name: Primary route candidate
+  analogue_goal: Build a directional lab analogue for the process sequence.
+  matching_equipment:
+  - Thinky mixer
+  - XQM-20 ball mill
+  - Paint shaker (max 35 kg)
+  needed_adaptations:
+  - Define a simpler analogue route or identify missing equipment.
+  major_gaps:
+  - Key operating parameters were not clearly identified.
+  - Very little extractable text was available.
+  - No strong equipment match was found for the route steps.
+  feasibility_result: not_recommended

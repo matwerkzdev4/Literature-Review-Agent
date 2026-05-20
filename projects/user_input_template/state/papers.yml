@@ -1,0 +1,59 @@
+papers:
+- paper_id: PAPER-001
+  title: Pilot-scale tape casting route for ceramic slurry processing
+  year: 2022
+  journal: Open Materials Processing
+  doi: 10.0000/demo.001
+  source: DOAJ
+  url: https://example.org/paper-001
+  abstract: This study describes an experimental tape-casting process with pilot-scale
+    discussion and production-relevant slurry handling.
+  route_ids:
+  - ROUTE-001
+  status: retained
+  triage_decision: retain
+  triage_reason: Retained for route-level review.
+  experimental_signal: clear_experimental_method
+  pilot_signal: pilot_scale_discussion
+  industrial_compatibility_signal: uses_standard_processing_logic
+  notes: ''
+- paper_id: PAPER-002
+  title: Lab study of spray-applied coating route with limited scale discussion
+  year: 2021
+  journal: Accessible Surface Science
+  doi: 10.0000/demo.002
+  source: CORE
+  url: https://example.org/paper-002
+  abstract: This paper reports experimental spray application results, but it gives
+    only limited discussion of pilot or industrial transfer.
+  route_ids:
+  - ROUTE-001
+  status: retained
+  triage_decision: retain
+  triage_reason: Retained for route-level review.
+  experimental_signal: experimental
+  pilot_signal: ''
+  industrial_compatibility_signal: partially_supported
+  notes: ''
+query: what best performing thermal insulation
+query_variants:
+- what best performing thermal insulation
+- what best performing to_be_defined
+- what are the best to_be_defined
+search_notes:
+- 'Could not fetch https://doaj.org/api/search/articles/what+best+performing+thermal+insulation?pageSize=5:
+  <urlopen error [Errno -3] Temporary failure in name resolution>'
+- 'Could not fetch https://core.ac.uk:443/api-v2/search/what+best+performing+thermal+insulation?page=1&pageSize=5:
+  <urlopen error [Errno -3] Temporary failure in name resolution>'
+- NOMAD is approved but does not have an automated search adapter yet.
+- NOMAD is approved but does not have an automated search adapter yet.
+- NOMAD is approved but does not have an automated search adapter yet.
+- ACS_MATERIALS_AU is approved but does not have an automated search adapter yet.
+- ACS_MATERIALS_AU is approved but does not have an automated search adapter yet.
+- ACS_MATERIALS_AU is approved but does not have an automated search adapter yet.
+- ACS_OPEN_SCIENCE is approved but does not have an automated search adapter yet.
+- ACS_OPEN_SCIENCE is approved but does not have an automated search adapter yet.
+- ACS_OPEN_SCIENCE is approved but does not have an automated search adapter yet.
+- SCIENCEDIRECT_OA is approved but does not have an automated search adapter yet.
+- SCIENCEDIRECT_OA is approved but does not have an automated search adapter yet.
+- SCIENCEDIRECT_OA is approved but does not have an automated search adapter yet.

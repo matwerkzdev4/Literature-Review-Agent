@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+
+.active_project
+.codex
+
+projects/*
+!projects/.gitkeep
+!projects/smoke_test/
+!projects/smoke_test/**
+!projects/user_input_template/
+!projects/user_input_template/**

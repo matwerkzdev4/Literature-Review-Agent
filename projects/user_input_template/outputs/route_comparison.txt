@@ -1,0 +1,5 @@
+Route comparison
+- Primary route candidate: strong evidence, average score 6.5/10.
+  Strengths: Pilot or scale signal was detected.; Industrial compatibility signal was detected.
+  Limits: Text mentions limited.
+  Unknowns: Key operating parameters were not clearly identified.; Very little extractable text was available.

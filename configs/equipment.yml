@@ -1,0 +1,29 @@
+equipment:
+  core_processing_and_mixing:
+    - "Thinky mixer"
+    - "XQM-20 ball mill"
+    - "Paint shaker (max 35 kg)"
+    - "Waring commercial blender"
+    - "Warbush blender"
+    - "Centrifugal mixer with vacuum function"
+    - "MSK-2150 roller"
+    - "Long tape casting coater (250 mm x 800 mm)"
+  thermal_processing:
+    - "Heraeus laboratory muffle furnace"
+    - "Carbolite CWF-1100 furnace"
+    - "BOYN forced air drying oven"
+    - "Hotplate stirrers"
+  vacuum_and_atmosphere:
+    - "1-stage vacuum pump RS-10"
+    - "Shanghai EVP vacuum pump"
+  forming_and_consolidation:
+    - "YHA6-100TS hot press machine"
+  dispersion_and_treatment:
+    - "Sonicator"
+  surface_coating_and_application:
+    - "Walk-in spray booth"
+    - "Graco Ultra cordless handheld airless sprayer"
+  testing_and_handling:
+    - "Torch and grit test chamber (planned)"
+    - "Weighing scales (Mettler Toledo XP5003S, A6-001)"
+    - "Air compressor"

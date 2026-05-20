@@ -1,0 +1,44 @@
+workflow_id: ''
+current_stage: lab_analogue_agent
+workflow_status: stopped_early
+input_files:
+  intake: state/intake.yml
+  technical_scope: state/technical_scope.yml
+  papers: state/papers.yml
+  shortlist: state/shortlist.yml
+detail_files:
+  paper_details_dir: state/paper_details/
+output_files:
+  route_comparison: state/route_comparison.yml
+  lab_analogue: state/lab_analogue.yml
+  recommendations: state/recommendations.yml
+stage_status:
+  intake_agent: completed
+  translation_agent: completed
+  search_agent: completed
+  triage_agent: completed
+  ranking_agent: completed
+  full_text_extraction_agent: completed
+  route_comparison_agent: completed
+  lab_analogue_agent: completed
+  recommendation_agent: pending
+  compliance_agent: pending
+approval_gate:
+  required: true
+  status: pending_user_approval
+  triggered_after: ranking_agent
+early_stop:
+  triggered: true
+  reason: no_valid_path_with_current_equipment
+  stage: lab_analogue_agent
+  surviving_route_ids: []
+final_decision:
+  overall_label: not recommended
+  summary: no_valid_path_with_current_equipment
+notes: Lab analogue assessment completed.
+compliance:
+  passed: false
+  issues: []
+  required_sections: []
+project_name: user_input_template
+project_root: projects/user_input_template

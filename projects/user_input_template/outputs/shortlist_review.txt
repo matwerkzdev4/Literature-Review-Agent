@@ -1,0 +1,10 @@
+Shortlist review
+Shortlist status: pending_user_approval
+Routes:
+- Rank 1: Primary route candidate.
+  Why it is here: Ranked by retained evidence volume and signal strength.
+Papers:
+- Rank 1: PAPER-001 - Pilot-scale tape casting route for ceramic slurry processing [approval: pending]
+  Why it is here: Retained after abstract triage and ranked for deeper review.
+- Rank 2: PAPER-002 - Lab study of spray-applied coating route with limited scale discussion [approval: pending]
+  Why it is here: Retained after abstract triage and ranked for deeper review.

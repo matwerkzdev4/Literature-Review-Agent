@@ -1,0 +1,31 @@
+shortlist_status: approved
+ranked_routes:
+- route_id: ROUTE-001
+  route_name: Primary route candidate
+  rank: 1
+  shortlist_reason: Ranked by retained evidence volume and signal strength.
+  supporting_paper_ids:
+  - PAPER-001
+  - PAPER-002
+ranked_papers:
+- paper_id: PAPER-001
+  title: Pilot-scale tape casting route for ceramic slurry processing
+  route_ids:
+  - ROUTE-001
+  paper_rank: 1
+  shortlist_reason: Retained after abstract triage and ranked for deeper review.
+  approval_status: approved
+- paper_id: PAPER-002
+  title: Lab study of spray-applied coating route with limited scale discussion
+  route_ids:
+  - ROUTE-001
+  paper_rank: 2
+  shortlist_reason: Retained after abstract triage and ranked for deeper review.
+  approval_status: approved
+user_actions:
+  approved_paper_ids:
+  - PAPER-001
+  - PAPER-002
+  removed_paper_ids: []
+  reprioritized_paper_ids: []
+notes: ''

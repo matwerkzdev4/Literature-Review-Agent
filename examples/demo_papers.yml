@@ -1,0 +1,36 @@
+papers:
+  - paper_id: PAPER-001
+    title: "Pilot-scale tape casting route for ceramic slurry processing"
+    year: 2022
+    journal: "Open Materials Processing"
+    doi: "10.0000/demo.001"
+    source: "DOAJ"
+    url: "https://example.org/paper-001"
+    abstract: "This study describes an experimental tape-casting process with pilot-scale discussion and production-relevant slurry handling."
+    route_ids:
+      - "ROUTE-001"
+    status: "candidate"
+    triage_decision: ""
+    triage_reason: ""
+    experimental_signal: "clear_experimental_method"
+    pilot_signal: "pilot_scale_discussion"
+    industrial_compatibility_signal: "uses_standard_processing_logic"
+    notes: ""
+
+  - paper_id: PAPER-002
+    title: "Lab study of spray-applied coating route with limited scale discussion"
+    year: 2021
+    journal: "Accessible Surface Science"
+    doi: "10.0000/demo.002"
+    source: "CORE"
+    url: "https://example.org/paper-002"
+    abstract: "This paper reports experimental spray application results, but it gives only limited discussion of pilot or industrial transfer."
+    route_ids:
+      - "ROUTE-001"
+    status: "candidate"
+    triage_decision: ""
+    triage_reason: ""
+    experimental_signal: "experimental"
+    pilot_signal: ""
+    industrial_compatibility_signal: "partially_supported"
+    notes: ""

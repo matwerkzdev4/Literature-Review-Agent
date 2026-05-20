@@ -1,0 +1,39 @@
+paper_id: PAPER-002
+title: Lab study of spray-applied coating route with limited scale discussion
+doi: 10.0000/demo.002
+route_ids:
+- ROUTE-001
+url: https://example.org/paper-002
+material_details: 'Detected material clues: coating.'
+process_steps:
+- spray
+- coat
+key_parameters: []
+reported_scale: industrial
+pilot_evidence: ''
+industrial_compatibility_evidence: industrial_compatibility_signal_present
+performance_outcomes: []
+limitations:
+- Text mentions limited.
+failure_points: []
+missing_details:
+- Key operating parameters were not clearly identified.
+- Very little extractable text was available.
+evidence_flags:
+  has_clear_process_steps: true
+  has_multiple_process_steps: true
+  has_key_parameters: false
+  has_scale_signal: true
+  has_pilot_signal: false
+  has_industrial_signal: true
+  has_failure_or_limitations: true
+  has_performance_outcomes: false
+summary_snippets:
+- Lab study of spray-applied coating route with limited scale discussion This paper
+  reports experimental spray application results, but it gives only limited discussion
+  of pilot or industrial transfer.
+page_fetch_status: failed
+page_title: ''
+page_summary: ''
+notes: 'Could not fetch document: <urlopen error [Errno -3] Temporary failure in name
+  resolution>'

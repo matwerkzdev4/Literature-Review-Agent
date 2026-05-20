@@ -1,0 +1,45 @@
+How To Use This File:
+Run these commands from inside the project folder.
+Each workflow run will be saved in its own folder inside `projects/`.
+Step 1: Replace the example text below with your own answers in simple English.
+Step 2: Save this file.
+Step 3: Start the workflow with:
+PYTHONPATH=src python3 -m literature_review_agent --project-root . start-from-file --input-file templates/user_input_template.txt
+Optional: if you want to choose the project folder name yourself, add:
+--project-name my_project_name
+Step 4: Run the workflow:
+PYTHONPATH=src python3 -m literature_review_agent --project-root . run
+Step 5: If the workflow pauses, review the shortlist:
+PYTHONPATH=src python3 -m literature_review_agent --project-root . show-shortlist
+Step 6: Approve the shortlist:
+PYTHONPATH=src python3 -m literature_review_agent --project-root . approve-shortlist --all
+Step 7: Run the workflow again:
+PYTHONPATH=src python3 -m literature_review_agent --project-root . run
+Step 8: Read the final result:
+PYTHONPATH=src python3 -m literature_review_agent --project-root . show-final-brief
+The output will be saved inside:
+projects/<project_name>/
+
+Question: What are the best performing thermal insulation composite sheets and how are they made?
+Help: Write in simple English what you want to find out.
+Example: I want to compare possible processing routes for a ceramic slurry and decide what experiment we should try first.
+
+Where It Will Be Used: In energy storage systems or battery packs for EVs for thermal management.
+Help: Write where you think this may be used, if you know.
+Example: This may be used for coating development in a lab that wants a path toward larger-scale production.
+
+What Outcome Matters Most: The experiment route supported with strong evidences that the provides the best insulation performance composite sheet. 
+Help: Write what matters most to you.
+Example: I want the most practical route with the strongest evidence, not the most novel idea.
+
+What Is This For: We want to choose the best next experiment and avoid wasting time on weak routes.
+Help: Write why you want this review.
+Example: We want to choose the best next experiment and avoid wasting time on weak routes.
+
+Limits Or Constraints: Only use publicly accessible sources. The thickness of the composite sheet is key. 
+Help: Write any limits you know about.
+Example: Use only public sources. We need something that can be tested with our current equipment.
+
+Additional Notes: Plain English is fine. The team is mixed, so the final output should be easy to read.
+Help: Write anything else that may help.
+Example: Plain English is fine. The team is mixed, so the final output should be easy to read.

@@ -1,0 +1,26 @@
+route_definition_basis: "process_sequence"
+
+recommendation_priority:
+  - "strength_of_evidence"
+  - "pilot_relevance"
+  - "industrial_compatibility"
+  - "lab_analogue_feasibility"
+  - "risks_and_missing_details"
+
+route_labels:
+  - "recommended"
+  - "conditional"
+  - "not recommended"
+
+evidence_strength_factors:
+  - "experimental_detail"
+  - "route_relevance"
+  - "consistency_across_papers"
+  - "scale_signal"
+  - "practical_usefulness"
+
+early_stop_reasons:
+  - "evidence_too_weak_for_experiment_planning"
+  - "insufficient_pilot_relevant_evidence"
+  - "no_valid_path_with_current_equipment"
+  - "no_route_recommended"
